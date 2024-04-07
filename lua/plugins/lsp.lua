@@ -99,6 +99,24 @@ return {
             },
           },
         },
+        lemminx = {
+          settings = {
+            xml = {
+              trace = {
+                server = verbose,
+              },
+              -- catalogs= [],
+              format = {
+                splitAttributes = false,
+                joinCDATALines = false,
+                joinContentLines = true,
+                joinCommentLines = false,
+                spaceBeforeEmptyCloseTag = true,
+                enabled = true,
+              },
+            },
+          },
+        },
         html = {},
         yamlls = {
           settings = {
