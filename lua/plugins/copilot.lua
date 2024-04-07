@@ -1,0 +1,42 @@
+return {
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   opts = {
+  --     -- suggestion = { enabled = true, auto_trigger = true, keymap = { accept = "<C-j>" } },
+  --     panel = {
+  --       enabled = true,
+  --       auto_refresh = false,
+  --       keymap = {
+  --         jump_prev = "<C-j>",
+  --         jump_next = "<C-k>",
+  --         accept = "<CR>",
+  --         refresh = "gr",
+  --         open = "<M-CR>",
+  --       },
+  --       layout = {
+  --         position = "bottom", -- | top | left | right
+  --         ratio = 0.5,
+  --       },
+  --     },
+  --     suggestion = {
+  --       enabled = true,
+  --       auto_trigger = true,
+  --       debounce = 75,
+  --       keymap = {
+  --         accept = "<M-l>",
+  --         accept_word = false,
+  --         accept_line = false,
+  --         next = "<M-j>",
+  --         prev = "<M-k>",
+  --         dismiss = "<M-l>",
+  --       },
+  --     },
+  --     filetypes = {
+  --       markdown = true,
+  --       help = true,
+  --     },
+  --   },
+  --   copilot_node_command = "node", -- Node.js version must be > 16.x
+  --   server_opts_overrides = {},
+  -- },
+}
