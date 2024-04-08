@@ -63,7 +63,9 @@ return {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
       servers = {
-        cssls = {},
+        cssls = {
+          settings = {},
+        },
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -76,6 +78,8 @@ return {
           single_file_support = false,
           settings = {
             typescript = {
+              autoClosingTags = true,
+              organizeImports = true,
               inlayHints = {
                 includeInlayParameterNameHints = "literal",
                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
@@ -87,6 +91,8 @@ return {
               },
             },
             javascript = {
+              autoClosingTags = true,
+              organizeImports = true,
               inlayHints = {
                 includeInlayParameterNameHints = "all",
                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
