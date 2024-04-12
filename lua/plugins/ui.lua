@@ -67,15 +67,15 @@ return {
       }
     end,
   },
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = {
-      options = {
-        theme = "solarized_dark",
-      },
-    },
-  },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     options = {
+  --       theme = "solarized_dark",
+  --     },
+  --   },
+  -- },
   {
     "b0o/incline.nvim",
     dependencies = { "craftzdog/solarized-osaka.nvim" },
@@ -107,58 +107,58 @@ return {
     end,
   },
   -- buffer line
-  {
-    "akinsho/bufferline.nvim",
-    event = "VeryLazy",
-    keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-    },
-    opts = {
-      options = {
-        mode = "tabs",
-        -- separator_style = "slant",
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-      },
-      config = function()
-        local Offset = require("bufferline.offset")
-        if not Offset.edgy then
-          local get = Offset.get
-          Offset.get = function()
-            if package.loaded.edgy then
-              local layout = require("edgy.config").layout
-              local ret = { left = "", left_size = 0, right = "", right_size = 0 }
-              for _, pos in ipairs({ "left", "right" }) do
-                local sb = layout[pos]
-                if sb and #sb.wins > 0 then
-                  local title = " Sidebar" .. string.rep(" ", sb.bounds.width - 8)
-                  ret[pos] = "%#EdgyTitle#" .. title .. "%*" .. "%#WinSeparator#│%*"
-                  ret[pos .. "_size"] = sb.bounds.width
-                end
-              end
-              ret.total_size = ret.left_size + ret.right_size
-              if ret.total_size > 0 then
-                return ret
-              end
-            end
-            return get()
-          end
-          Offset.edgy = true
-        end
-      end,
-    },
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   event = "VeryLazy",
+  --   keys = {
+  --     { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+  --     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+  --   },
+  --   opts = {
+  --     options = {
+  --       mode = "tabs",
+  --       -- separator_style = "slant",
+  --       show_buffer_close_icons = false,
+  --       show_close_icon = false,
+  --     },
+  --     config = function()
+  --       local Offset = require("bufferline.offset")
+  --       if not Offset.edgy then
+  --         local get = Offset.get
+  --         Offset.get = function()
+  --           if package.loaded.edgy then
+  --             local layout = require("edgy.config").layout
+  --             local ret = { left = "", left_size = 0, right = "", right_size = 0 }
+  --             for _, pos in ipairs({ "left", "right" }) do
+  --               local sb = layout[pos]
+  --               if sb and #sb.wins > 0 then
+  --                 local title = " Sidebar" .. string.rep(" ", sb.bounds.width - 8)
+  --                 ret[pos] = "%#EdgyTitle#" .. title .. "%*" .. "%#WinSeparator#│%*"
+  --                 ret[pos .. "_size"] = sb.bounds.width
+  --               end
+  --             end
+  --             ret.total_size = ret.left_size + ret.right_size
+  --             if ret.total_size > 0 then
+  --               return ret
+  --             end
+  --           end
+  --           return get()
+  --         end
+  --         Offset.edgy = true
+  --       end
+  --     end,
+  --   },
+  -- },
   -- animations
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.scroll = {
-        enable = false,
-      }
-    end,
-  },
+  -- {
+  --   "echasnovski/mini.animate",
+  --   event = "VeryLazy",
+  --   opts = function(_, opts)
+  --     opts.scroll = {
+  --       enable = false,
+  --     }
+  --   end,
+  -- },
   {
     "folke/edgy.nvim",
     event = "VeryLazy",
@@ -242,7 +242,7 @@ return {
               return vim.b[buf].neo_tree_source == "buffers"
             end,
             -- pinned = true,
-            pinned = false,
+            pinned = true,
             open = "Neotree position=top buffers",
           },
           "neo-tree",

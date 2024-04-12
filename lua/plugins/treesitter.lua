@@ -3,18 +3,17 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     opts = {
       ensure_installed = {
-        "astro",
-        "cmake",
-        "cpp",
         "css",
-        "fish",
+        "dockerfile",
         "gitignore",
         "go",
         "graphql",
         "http",
-        "java",
         "javascript",
         "json",
         "markdown",
@@ -24,13 +23,21 @@ return {
         "scss",
         "sql",
         "svelte",
+        "typescript",
         "xml",
         "yaml",
       },
-
-      -- matchup = {
-      -- 	enable = true,
-      -- },
+      indent = { enable = true },
+      highlight = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
 
       -- https://github.com/nvim-treesitter/playground#query-linter
       query_linter = {
@@ -60,7 +67,6 @@ return {
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
-
       -- MDX
       vim.filetype.add({
         extension = {

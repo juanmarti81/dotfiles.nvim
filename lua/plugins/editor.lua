@@ -68,7 +68,7 @@ return {
         desc = "Find Plugin File",
       },
       {
-        ";f",
+        "<leader>ff",
         function()
           local builtin = require("telescope.builtin")
           builtin.find_files({
@@ -79,7 +79,7 @@ return {
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
-        ";r",
+        "<leader>fs",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep({
@@ -89,12 +89,14 @@ return {
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
-        "\\\\",
+        "<leader>fw",
         function()
           local builtin = require("telescope.builtin")
-          builtin.buffers()
+          builtin.grep_string({
+            additional_args = { "--color=never", "--line-number" },
+          })
         end,
-        desc = "Lists open buffers",
+        desc = "Find string under cursor in cwd",
       },
       {
         ";t",

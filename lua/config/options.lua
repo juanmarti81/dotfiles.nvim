@@ -14,10 +14,21 @@ vim.opt.backup = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.scrolloff = 10
 
 vim.opt.smarttab = true
 vim.opt.breakindent = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.relativenumber = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.g.mkdp_browser = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
