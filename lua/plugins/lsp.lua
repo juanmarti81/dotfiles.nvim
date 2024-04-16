@@ -124,6 +124,7 @@ return {
           },
         },
         html = {},
+        htmx_lsp = {},
         yamlls = {
           settings = {
             yaml = {

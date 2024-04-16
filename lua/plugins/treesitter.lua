@@ -16,6 +16,7 @@ return {
         "http",
         "javascript",
         "json",
+        "lua",
         "markdown",
         "prisma",
         "python",
@@ -28,7 +29,7 @@ return {
         "yaml",
       },
       indent = { enable = true },
-      highlight = { enable = true },
+      --highlight = { enable = true },
       incremental_selection = {
         enable = true,
         keymaps = {
